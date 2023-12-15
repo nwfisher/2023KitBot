@@ -13,6 +13,18 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
+  public static class Drivetrain {
+    public static final int LEFT_MOTOR_O_ID = -1; //TODO: Get device ID
+    public static final int LEFT_MOTOR_1_ID = -1; //TODO: Get device ID
+    public static final int RIGHT_MOTOR_O_ID = -1; //TODO: Get device ID
+    public static final int RIGHT_MOTOR_1_ID = -1; //TODO: Get device ID
+
+    public static final double TRACK_WIDTH = -1.0; //TODO: Get track width
+
+    public static final double RIGHT_KP = -1.0; //TODO: Tune right KP
+    public static final double LEFT_KP = -1.0; //TODO: Tune left KP
+
+  }
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
   }
