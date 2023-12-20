@@ -6,4 +6,8 @@ public class Conversions {
         double RPM = motorRPM/gearRatio;
         return RPM;
     }
+
+    public static double RPMtoMPS(double RPM, double circumference) {
+        return (RPM * circumference) / 60;
+    }
 }

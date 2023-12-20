@@ -14,6 +14,7 @@ import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import edu.wpi.first.math.kinematics.DifferentialDriveWheelSpeeds;
 import edu.wpi.first.math.kinematics.DifferentialDriveKinematics;
 import edu.wpi.first.math.controller.PIDController;
+import frc.utils.Conversions;
 
 import frc.robot.Constants;
 
@@ -27,6 +28,9 @@ public class Drivetrain extends SubsystemBase {
 
     private DifferentialDriveKinematics mKinematics = new DifferentialDriveKinematics(Constants.Drivetrain.TRACK_WIDTH);
 
+    private PIDController mLeftPIDController = new PIDController(Constants.Drivetrain.LEFT_KP, 0, 0);
+    private PIDController mRightPIDController = new PIDController(Constants.Drivetrain.RIGHT_KP, 0, 0);
+
     public Drivetrain() {
         mLeftMotor0 = new VictorSPX(Constants.Drivetrain.LEFT_MOTOR_O_ID);
         mLeftMotor1 = new VictorSPX(Constants.Drivetrain.LEFT_MOTOR_1_ID);
@@ -39,7 +43,7 @@ public class Drivetrain extends SubsystemBase {
     }
 
     private void setSpeeds(DifferentialDriveWheelSpeeds wheelSpeeds) {
-
+        double leftOutput = mLeftPIDController.calculate(Conversions.encoderTicksToRPM(mLeftMotor0.getSelectedSensorVelocity(), Constants.Drivetrain.geatRatio), wheelSpeeds.leftMetersPerSecond);
     }
 
     @Override

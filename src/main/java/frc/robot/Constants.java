@@ -24,6 +24,9 @@ public final class Constants {
     public static final double RIGHT_KP = -1.0; //TODO: Tune right KP
     public static final double LEFT_KP = -1.0; //TODO: Tune left KP
 
+    public static final double wheelDiameter = -1.0; //TODO: Get wheel diameter
+    public static final double geatRatio = -1.0/0; //TODO: Get gear ratio
+
   }
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
